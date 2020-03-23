@@ -19,3 +19,20 @@
     <span contenteditable="true" (blur)="$event.target.textContent = (a = fixNumeric($event.target.textContent, 0.5))">{{a}}</span>
     <i>mm</i>
 </div>
+
+<div class="field" style="text-align: center;">=</div>
+
+<div class="field">
+    <b class="quality-level" [class.matching]="getQualityLevel() === 'D'">D</b>
+    <i>h &#8804; 2 mm + 0,2 a</i>
+</div>
+
+<div class="field">
+    <b class="quality-level" [class.matching]="getQualityLevel() === 'C'">C</b>
+    <i>h &#8804; 2 mm + 0,15 a</i>
+</div>
+
+<div class="field">
+    <b class="quality-level" [class.matching]="getQualityLevel() === 'B'">B</b>
+    <i>h &#8804; 1,5 mm + 0,15 a</i>
+</div>

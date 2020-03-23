@@ -10,15 +10,30 @@ html, body {
     display: block;
     max-width: 300px;
     max-height: 200px;
+   
     width: 100%;
+}
+
+.quality-level {
+    display: inline-block;
+    background-color: #eee;
+    width: 1em;
+    text-align: center;
+    height: 1em;
+    padding: 0.25em;
+    margin-right: 0.25em;
+
+    &.matching {
+        background-color: rgb(173, 223, 59);
+    }
 }
 
 .field {
     margin: 1em;
     [contenteditable] {
         border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
-        margin-left: 0.25em;
-        margin-right: 0.25em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
         display: inline-block;
         width: auto;
         outline: none;

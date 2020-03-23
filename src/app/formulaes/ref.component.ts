@@ -9,7 +9,7 @@ export class AbstractRefComponent {
   fixNumeric(input: string, def: number = 0): number {
     let val = parseFloat(input);
 
-    if (!val || isNaN(val)) {
+    if (!val || isNaN(val) || val < 0) {
       return def;
     }
 
