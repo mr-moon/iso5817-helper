@@ -4,19 +4,25 @@
 
 <div class="field">
     <i>t</i>
-    <span contenteditable="true" (blur)="$event.target.textContent = (t = fixNumeric($event.target.textContent, 0.5))">{{t}}</span>
+    <span contenteditable="true" inputmode="decimal" 
+        (click)="moveCaretToEnd($event)"
+        (blur)="$event.target.textContent = (t = fixNumeric($event.target.textContent, 0.5))">{{t}}</span>
     <i>mm</i>
 </div>
 
 <div class="field">
     <i>h</i>
-    <span contenteditable="true" (blur)="$event.target.textContent = (h = fixNumeric($event.target.textContent, 0.5))">{{h}}</span>
+    <span contenteditable="true" inputmode="decimal"
+        (click)="moveCaretToEnd($event)"
+        (blur)="$event.target.textContent = (h = fixNumeric($event.target.textContent, 0.5))">{{h}}</span>
     <i>mm</i>
 </div>
 
 <div class="field">
     <i>a</i>
-    <span contenteditable="true" (blur)="$event.target.textContent = (a = fixNumeric($event.target.textContent, 0.5))">{{a}}</span>
+    <span contenteditable="true" inputmode="decimal"
+        (click)="moveCaretToEnd($event)"
+        (blur)="$event.target.textContent = (a = fixNumeric($event.target.textContent, 0.5))">{{a}}</span>
     <i>mm</i>
 </div>
 

@@ -15,4 +15,8 @@ export class AbstractRefComponent {
 
     return val;
   }
+
+  moveCaretToEnd($event) {
+    document.execCommand('selectAll',false,null)
+  }
 }
