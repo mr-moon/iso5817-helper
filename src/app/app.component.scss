@@ -1,0 +1,92 @@
+$view-stop: 600px;
+
+:host {
+    width: 100%;
+    max-width: 1024px;
+    display: block;
+    padding: 1em;
+    columns: 2;
+    column-gap: 1em;
+    position: relative;
+    @media screen and (min-width: $view-stop) {
+        columns: 4;
+        margin: 0 auto;
+    }
+}
+
+.card {
+    border: 1px solid red;
+    display: inline-block;
+    width: 100%;
+}
+
+
+.view {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+}
+.view-shade {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 20vw;
+    height: 100%;
+    left: 0;
+}
+.view-content {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 80vw;
+    background-color: #fff;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+}
+
+.row {
+    @media screen and (max-width: $view-stop - 1px) {
+        margin: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-content: space-around;
+        border-top:1px solid #888;
+	    border-left:1px solid #888;
+    }
+    @media screen and (min-width: $view-stop) {
+        display: table-row;
+    }
+}
+
+.cell {
+    padding: 10px;
+    @media screen and (max-width: $view-stop - 1px) {
+        border-bottom:1px solid #888;
+        border-right:1px solid #888;
+        flex: 1 1 auto;
+        &:nth-child(5) {
+            flex: 1 0 100%;
+        }
+        box-sizing: border-box;
+        display: block;
+    }
+
+    @media screen and (min-width: $view-stop) {
+        display: table-cell;
+    }
+
+    &.green {
+        background-color:rgba(65, 255, 21, 0.1);
+    }
+
+    input[type=number] {
+        border: 1px dotted grey;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    small  {
+        background-color: rgb(195, 199, 255);
+    }
+}

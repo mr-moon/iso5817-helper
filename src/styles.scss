@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.schematic {
+    display: block;
+    max-width: 300px;
+    max-height: 200px;
+    width: 100%;
+}
+
+.field {
+    margin: 1em;
+    [contenteditable] {
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+        margin-left: 0.25em;
+        margin-right: 0.25em;
+        display: inline-block;
+        width: auto;
+        outline: none;
+        font-size: 1.3em;
+    }
+}
