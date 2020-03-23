@@ -3,14 +3,6 @@
 </div>
 
 <div class="field">
-    <i>t</i>
-    <span contenteditable="true" inputmode="decimal" 
-        (click)="moveCaretToEnd($event)"
-        (blur)="$event.target.textContent = (t = fixNumeric($event.target.textContent, 0.5))">{{t}}</span>
-    <i>mm</i>
-</div>
-
-<div class="field">
     <i>h</i>
     <span contenteditable="true" inputmode="decimal"
         (click)="moveCaretToEnd($event)"
@@ -28,9 +20,10 @@
 
 <div class="field" style="text-align: center;">=</div>
 
+
 <div class="field">
-    <b class="quality-level" [class.matching]="getQualityLevel() === 'D'">D</b>
-    <i>h &#8804; 2 mm + 0,2 a</i>
+    <b class="quality-level" [class.matching]="getQualityLevel() === 'B'">B</b>
+    <i>h &#8804; 1,5 mm + 0,15 a</i>
 </div>
 
 <div class="field">
@@ -39,6 +32,6 @@
 </div>
 
 <div class="field">
-    <b class="quality-level" [class.matching]="getQualityLevel() === 'B'">B</b>
-    <i>h &#8804; 1,5 mm + 0,15 a</i>
+    <b class="quality-level" [class.matching]="getQualityLevel() === 'D'">D</b>
+    <i>h &#8804; 2 mm + 0,2 a</i>
 </div>

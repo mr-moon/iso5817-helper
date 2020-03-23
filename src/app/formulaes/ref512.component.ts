@@ -24,15 +24,18 @@ export class Ref512Component extends AbstractRefComponent {
     }
 
     getQualityLevel() {
+        if (this.h <= 1.5 + 0.15 * this.a) {
+            return 'B';
+        }
+
+        if (this.h <= 2 + 0.15 * this.a) {
+            return 'C';
+        }
+
         if (this.h <= 2 + 0.2 * this.a) {
             return 'D';
         }
-        else if (this.h <= 2 + 0.15 * this.a) {
-            return 'C';
-        }
-        else if (this.h <= 1.5 + 0.15 * this.a) {
-            return 'B';
-        }
+        
         return null;
     }
 }
