@@ -7,7 +7,7 @@ export class AbstractRefComponent {
   public t:number;
 
   fixNumeric(input: string, def: number = 0): number {
-    let val = parseFloat(input);
+    let val = parseFloat(input.replace(/,/g, '.'));
 
     if (!val || isNaN(val) || val < 0) {
       return def;
