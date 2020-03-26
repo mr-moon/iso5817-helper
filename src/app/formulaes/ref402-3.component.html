@@ -1,0 +1,55 @@
+<div class="field">
+    Lack of penetration
+    <img src="assets/images/ref-402-3.png" class="schematic">
+</div>
+
+<div class="field">
+    <i>h</i>
+    <span contenteditable="true" inputmode="decimal"
+        (click)="moveCaretToEnd($event)"
+        (blur)="$event.target.textContent = (h = fixNumeric($event.target.textContent, 1, 0.5, 2))">{{h}}</span>
+    <i>mm</i>
+</div>
+
+<div class="field">
+    <i>a</i>
+    <span contenteditable="true" inputmode="decimal"
+        (click)="moveCaretToEnd($event)"
+        (blur)="$event.target.textContent = (a = fixNumeric($event.target.textContent, 0.1))">{{a}}</span>
+    <i>mm</i>
+</div>
+
+<div class="field">
+    <i>s</i>
+    <span contenteditable="true" inputmode="decimal"
+        (click)="moveCaretToEnd($event)"
+        (blur)="$event.target.textContent = (s = fixNumeric($event.target.textContent, 0.1))">{{s}}</span>
+    <i>mm</i>
+</div>
+
+<div class="field" style="text-align: center;">=</div>
+
+<div class="field">
+    <b class="quality-level">B</b>
+    <i>не допускается</i>
+</div>
+
+<div class="field">
+    <b class="quality-level" [class.matching]="min(1.5, h) <= 0.1*s">C</b>
+    <i>стыковое соединение: h &#8804; 0,1s (max. 1,5 mm)</i>
+</div>
+
+<div class="field">
+    <b class="quality-level" [class.matching]="min(1.5, h) <= 0.1*a">C</b>
+    <i>угловое соединение: h &#8804; 0,1a (max. 1,5 mm)</i>
+</div>
+
+<div class="field">
+    <b class="quality-level" [class.matching]="min(2, h) <= 0.2*s">D</b>
+    <i>стыковое соединение: h &#8804; 0,1s (max. 2 mm)</i>
+</div>
+
+<div class="field">
+    <b class="quality-level" [class.matching]="min(2, h) <= 0.2*a">D</b>
+    <i>тавровое соединение: h &#8804; 0,1a (max. 2 mm)</i>
+</div>

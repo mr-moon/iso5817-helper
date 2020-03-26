@@ -6,12 +6,23 @@ html, body {
     overflow: auto;
 }
 
+body {
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
 .schematic {
     display: block;
-    max-width: 300px;
-    max-height: 200px;
-   
-    width: 100%;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
 }
 
 .quality-level {

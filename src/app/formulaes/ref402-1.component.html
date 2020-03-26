@@ -1,0 +1,37 @@
+<div class="field">
+    Lack of penetration
+    <img src="assets/images/ref-402-1.png" class="schematic">
+</div>
+
+<div class="field">
+    <i>h</i>
+    <span contenteditable="true" inputmode="decimal"
+        (click)="moveCaretToEnd($event)"
+        (blur)="$event.target.textContent = (h = fixNumeric($event.target.textContent, 0.1))">{{h}}</span>
+    <i>mm</i>
+</div>
+
+<div class="field">
+    <i>a</i>
+    <span contenteditable="true" inputmode="decimal"
+        (click)="moveCaretToEnd($event)"
+        (blur)="$event.target.textContent = (a = fixNumeric($event.target.textContent, 0.1))">{{a}}</span>
+    <i>mm</i>
+</div>
+
+<div class="field" style="text-align: center;">=</div>
+
+<div class="field">
+    <b class="quality-level">B</b>
+    <i>не допускается</i>
+</div>
+
+<div class="field">
+    <b class="quality-level">C</b>
+    <i>не допускается</i>
+</div>
+
+<div class="field">
+    <b class="quality-level" [class.matching]="getQualityLevel() === 'D'">D</b>
+    <i>h &#8804; 0,2 a (max. 2mm)</i>
+</div>

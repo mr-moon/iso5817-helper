@@ -6,11 +6,19 @@ export class AbstractRefComponent {
   public h:number;
   public t:number;
 
-  fixNumeric(input: string, def: number = 0): number {
+  fixNumeric(input: string, def: number = 0, min: number = NaN, max: number = NaN): number {
     let val = parseFloat(input.replace(/,/g, '.'));
 
     if (!val || isNaN(val) || val < 0) {
-      return def;
+      val = def;
+    }
+
+    if (!isNaN(min)) {
+      val = Math.max(val, min);
+    }
+
+    if (!isNaN(max)) {
+      val = Math.min(val, max);
     }
 
     return val;
@@ -18,5 +26,13 @@ export class AbstractRefComponent {
 
   moveCaretToEnd($event) {
     document.execCommand('selectAll',false,null)
+  }
+
+  min(...numbers: number[]): number {
+    return Math.min.apply(this, numbers);
+  }
+  
+  max(...numbers: number[]): number {
+    return Math.max.apply(this, numbers);
   }
 }

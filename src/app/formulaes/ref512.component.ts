@@ -15,14 +15,6 @@ export class Ref512Component extends AbstractRefComponent {
         this.h = 1;
     }
 
-    fixNumeric(input: string, def: number = 0): number {
-        var val = super.fixNumeric(input, def);
-        if (val <= 0.5) {
-            return 0.5;
-        }
-        return val;
-    }
-
     getQualityLevel() {
         if (this.h <= 1.5 + 0.15 * this.a) {
             return 'B';
